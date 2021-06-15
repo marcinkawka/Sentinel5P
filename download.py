@@ -56,8 +56,8 @@ def prepare_download(city, folder, level='L2', date_range=['20190101', '20191231
     # big polys with cities inside
     polys = {'Moscow': "POLYGON((34.61091247331172 54.068784458219056,40.70616344210223 54.068784458219056,40.70616344210223 57.347572592132536,34.61091247331172 57.347572592132536,34.61091247331172 54.068784458219056))", # 1070
              'Istanbul': "POLYGON((27.36677367672644 39.90274802657737,30.299245456849114 39.90274802657737,30.299245456849114 42.53557310883875,27.36677367672644 42.53557310883875,27.36677367672644 39.90274802657737))", # 566
-             'Berlin': "POLYGON((12.558777671087848 52.03654820015532,14.114302561752853 52.03654820015532,14.114302561752853 53.025487507188046,12.558777671087848 53.025487507188046,12.558777671087848 52.03654820015532))" } # 825
-    
+             'Berlin': "POLYGON((12.558777671087848 52.03654820015532,14.114302561752853 52.03654820015532,14.114302561752853 53.025487507188046,12.558777671087848 53.025487507188046,12.558777671087848 52.03654820015532))", # 825
+             'Warsaw': "POLYGON((20.48777 52.46778,21.44633 52.46778,21.44633 52.03650,20.48777 52.03650,20.48777 52.46778))"}        
     # choose product form dict:
     # name: [name, description, user docs]
     products = {'L2':
@@ -66,13 +66,13 @@ def prepare_download(city, folder, level='L2', date_range=['20190101', '20191231
                     #'L2__O3__PR': ['L2__O3__PR', 'Ozone (O3) profile', 'PUM-PR , ATBD-O3_PR , IODD-NL'],
                     #'L2__O3_TPR': ['L2__O3_TPR', 'Ozone (O3) tropospheric profile', 'PUM-PR , ATBD-O3_PR , IODD-NL'],
                     'L2__NO2___': ['L2__NO2___', 'Nitrogen Dioxide (NO2), total and tropospheric columns', 'PRF-NO2, PUM-NO2, ATBD-NO2, IODD-NL'],
-                    'L2__SO2___': ['L2__SO2___', 'Sulfur Dioxide (SO2) total column', 'PRF-SO2, PUM-SO2, ATBD-SO2, IODD-UPAS'],
-                    'L2__CO____': ['L2__CO____', 'Carbon Monoxide (CO) total column', 'PRF-CO, PUM-CO, ATBD-CO, IODD-NL'],
-                    'L2__CH4___': ['L2__CH4___', 'Methane (CH4) total column', 'PRF-CH4, PUM-CH4, ATBD-CH4, IODD-NL'],
-                    'L2__HCHO__': ['L2__HCHO__', 'Formaldehyde (HCHO) total column', 'PRF-HCHO, PUM-HCHO , ATBD-HCHO , IODD-UPAS'],
-                    'L2__CLOUD_': ['L2__CLOUD_', 'Cloud fraction, albedo, top pressure', 'PRF-CL, PUM-CL, ATBD-CL, IODD-UPAS'],
-                    'L2__AER_AI': ['L2__AER_AI', 'UV Aerosol Index', 'PRF-AI, PUM-AI, ATBD-AI, IODD-NL'],
-                    'L2__AER_LH': ['L2__AER_LH', 'Aerosol Layer Height (mid-level pressure)', 'PRF-LH, PUM-LH , ATBD-LH , IODD-NL'],
+                    #'L2__SO2___': ['L2__SO2___', 'Sulfur Dioxide (SO2) total column', 'PRF-SO2, PUM-SO2, ATBD-SO2, IODD-UPAS'],
+                    #'L2__CO____': ['L2__CO____', 'Carbon Monoxide (CO) total column', 'PRF-CO, PUM-CO, ATBD-CO, IODD-NL'],
+                    #'L2__CH4___': ['L2__CH4___', 'Methane (CH4) total column', 'PRF-CH4, PUM-CH4, ATBD-CH4, IODD-NL'],
+                    #'L2__HCHO__': ['L2__HCHO__', 'Formaldehyde (HCHO) total column', 'PRF-HCHO, PUM-HCHO , ATBD-HCHO , IODD-UPAS'],
+                    #'L2__CLOUD_': ['L2__CLOUD_', 'Cloud fraction, albedo, top pressure', 'PRF-CL, PUM-CL, ATBD-CL, IODD-UPAS'],
+                    #'L2__AER_AI': ['L2__AER_AI', 'UV Aerosol Index', 'PRF-AI, PUM-AI, ATBD-AI, IODD-NL'],
+                    #'L2__AER_LH': ['L2__AER_LH', 'Aerosol Layer Height (mid-level pressure)', 'PRF-LH, PUM-LH , ATBD-LH , IODD-NL'],
                     #'UV product': ['proUV product', 'Surface Irradiance/erythemal dose', '-'],
                     #'L2__NP_BDx': ['L2__NP_BDx', 'Suomi-NPP VIIRS Clouds, x=3, 6, 7 2', 'PRF-NPP, PUM-NPP, ATBD-NPP'],
                     },
@@ -90,7 +90,7 @@ def prepare_download(city, folder, level='L2', date_range=['20190101', '20191231
                     }
                 }[level]
 
-    #date_range=['20191229', '20191231']
+    date_range=['20210607', '20210612']
     #products = {'L2__O3____': ['L2__O3____', 'Ozone (O3) total column', 'PRF-O3-NRTI, PRF-03-OFFL, PUM-O3, ATBD-O3, IODD-UPAS']}
 
     logs = {}
